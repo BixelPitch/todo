@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
                 user.EDITABLE = user.USER_ID === req.user.USER_ID
                 return user
             })
-            res.render('users', { users: users })
+            res.render('users', { users: users, i18n: req.i18n })
         })
         .catch(() => {
             res.sendStatus(500)

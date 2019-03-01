@@ -6,7 +6,7 @@ const SALT_WORK_FACTOR = 10
 const User = require('../models/User')
 
 router.get('/', function (req, res, next) {
-    res.render('register')
+    res.render('register', { i18n: req.i18n })
 })
 
 router.post('/', [

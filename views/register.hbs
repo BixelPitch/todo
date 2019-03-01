@@ -1,21 +1,21 @@
 {{> header}}
-<div class="container grid-md">
+<div class="container grid-sm">
     <form method="POST" action="/register">
         <div class="form-group">
-            <label class="form-label" for="username">Benutzername</label>
+            <label class="form-label" for="username">{{i18n.username}}</label>
             <input class="form-input" min="1" max="64" id="username" type="text" placeholder="Benutzername" name="username">
         </div>
         <div class="form-group">
-            <label class="form-label" for="password">Passwort</label>
+            <label class="form-label" for="password">{{i18n.password}}</label>
             <input class="form-input" min="1" id="password" type="password" placeholder="Passwort" name="password">
         </div>
         <div class="form-group">
-            <label class="form-label" for="password-confirmation">Passwort Wiederholen</label>
-            <input class="form-input" min="1" id="password-confirmation" type="password" placeholder="Passwort Wiederholen" name="passwordConfirmation">
+            <label class="form-label" for="password-confirmation">{{i18n.retypePassword}}</label>
+            <input class="form-input" min="1" id="password-confirmation" type="password" placeholder="{{i18n.retypePassword}}" name="passwordConfirmation">
         </div>
         <div class="form-group">
-            <input class="btn btn-primary btn-block" value="Registrieren" type="submit">
-            <a href="/login" class="btn btn-link btn-block">Du besitzt schon ein Konto? Hier geht's zum Login!</a>
+            <input class="btn btn-primary btn-block" value="{{i18n.register}}" type="submit">
+            <a href="/login" class="btn btn-link btn-block">{{i18n.redirectToLogin}}</a>
         </div>
     </form>
 </div>

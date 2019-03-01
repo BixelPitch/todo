@@ -1,0 +1,17 @@
+{
+    "username":                 "Username",
+    "password":                 "Password",
+    "retypePassword":           "Retype password",
+    "login":                    "Login",
+    "logout":                   "Logout",
+    "register":                 "Register",
+    "redirectToRegister":       "Not registered yet? Click here!",
+    "redirectToLogin":          "Already registered? Click here!",
+    "logoutSuccess":            "You logged yourself out successfully!",
+    "backToLogin":              "Back to login",
+    "noEntries":                "No entries available...",
+    "databaseErrorHeadline":    "The connection to the database couldn't be established!",
+    "databaseErrorSubheadline": "Please check your configuration and restart the application!",
+    "loadingHeadline":          "Connection to database is being established... Please wait.",
+    "loadingSubheadline":       "This page is being refreshed automatically. Lean back and wait a second!"
+}

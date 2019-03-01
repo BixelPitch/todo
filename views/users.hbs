@@ -1,12 +1,12 @@
-{{> header showLogout=true}}
+{{> header showLogout=true i18n=i18n}}
 <div class="container grid-xl">
   <div class="columns">
     {{#each users}}
     <div class="column col-sm-12 col-lg-6 col-4">
         {{#if EDITABLE}}
-            {{> todolistEditable user=this}}
+            {{> todolistEditable user=this i18n=i18n}}
         {{else}}
-            {{> todolist user=this}}
+            {{> todolist user=this i18n=i18n}}
         {{/if}}
     </div>
     {{/each}}

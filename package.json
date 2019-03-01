@@ -4,13 +4,14 @@
   "author": "bixelpitch <hannes@bixelspace.de>",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/BixelPitch/todo.git"
+    "type": "git",
+    "url": "https://github.com/BixelPitch/todo.git"
   },
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "accept-language-parser": "^1.5.0",
     "bcrypt": "^3.0.4",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.9",

@@ -1,0 +1,17 @@
+{
+    "username":                 "Benutzername",
+    "password":                 "Passwort",
+    "retypePassword":           "Passwort wiederholen",
+    "login":                    "Einloggen",
+    "logout":                   "Ausloggen",
+    "register":                 "Registrieren",
+    "redirectToRegister":       "Noch nicht registriert?",
+    "redirectToLogin":          "Bereits registriert?",
+    "logoutSuccess":            "Du hast dich erfolgreich ausgeloggt!",
+    "backToLogin":              "Zurück zum Login",
+    "noEntries":                "Keine Einträge vorhanden...",
+    "databaseErrorHeadline":    "Die Verbindung zur Datenbank konnte nicht hergestellt werden!",
+    "databaseErrorSubheadline": "Bitte überprüfe deine Konfiguration und starte die Applikation neu!",
+    "loadingHeadline":          "Verbindung zur Datenbank wird aufgebaut... Bitte warten.",
+    "loadingSubheadline":       "Diese Seite wird automatisch neu geladen. Lehne dich zurück und warte eine Sekunde!"
+}

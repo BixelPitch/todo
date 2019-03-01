@@ -74,6 +74,7 @@ app.use(sassMiddleware({
     indentedSyntax: false,
     sourceMap: true
 }))
+app.use(require('./middleware/i18n'))
 app.use(mysqlMiddleware(mysql))
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -81,7 +82,6 @@ app.use((req, res, next) => {
     req.landingPage = '/users'
     next()
 })
-
 app.use('/login', require('./routes/login'))
 app.use('/register', require('./routes/register'))
 app.use('/logout', require('./routes/logout'))

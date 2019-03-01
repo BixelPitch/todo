@@ -22,8 +22,8 @@ module.exports = function (mysql) {
         })
 
     return function (req, res, next) {
-        if (error) return res.render('database-error', { error: error })
-        if (!connected) return res.render('loading', { layout: 'layout-loading' })
+        if (error) return res.render('database-error', { error: error, i18n: req.i18n })
+        if (!connected) return res.render('loading', { layout: 'layout-loading', i18n: req.i18n })
         req.mysql = mysql
         next()
     }
