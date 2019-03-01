@@ -15,9 +15,7 @@ A simple application for demo purposes, which manages To-Do-Lists for registered
 - Run ````npm start```` to start the application
 
 ## Deployment with docker
-- Clone this repository
-- Inside the project directory run ````docker build -t <your username>/todo .````
-- Run ````docker run -p 3000:3000 -d <your username>/node-web-app````
+- Run ````docker run --name todo -d bixelpitch/todo -p 3000:3000````
 
 ## Application parameters
 These are the default application parameters. If something does not fit to your current setup, just override them with environment variables. It is highly recommended, that you at least set the ````SECRET````, ````MYSQL_PASSWORD```` and the ````NODE_ENV````, if you run the app in production.
