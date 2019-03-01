@@ -1,7 +1,7 @@
+# TODO
 ![Login](/screenshots/screenshot_login.png?raw=true "Login Screen")
 ![Dashboard](/screenshots/screenshot_dashboard.png?raw=true "Dashboard Screen")
 
-# TODO
 A simple application for demo purposes, which manages To-Do-Lists for registered Users.
 
 ## Prerequisites
