@@ -1,0 +1,24 @@
+<div class="panel mb-2">
+    <div class="panel-header text-bold">
+        {{user.USERNAME}}
+    </div>
+    <div class="panel-body">
+        {{#each user.TODOS}}
+        <div class="columns">
+            <div class="column col-auto">
+                {{#if DONE}}
+                <i class="icon icon-check"></i>
+                {{else}}
+                <i class="icon"></i>
+                {{/if}}
+            </div>
+            <div class="column mb-2">
+                <span>{{TEXT}}</span>
+            </div>
+        </div>
+        {{else}}
+        <p class="text-center">Keine Einträge vorhanden</p>
+        {{/each}}
+    </div>
+    <div class="panel-footer"></div>
+</div>

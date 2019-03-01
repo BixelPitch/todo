@@ -1,0 +1,17 @@
+{{> header}}
+<div class="container grid-sm">
+    <form action="/login" method="POST">
+        <div class="form-group">
+            <label class="form-label" for="username">Benutzername</label>
+            <input class="form-input" id="username" type="text" placeholder="Benutzername" name="username">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-input" id="password" type="password" placeholder="Passwort" name="password">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary btn-block" value="Einloggen" type="submit">
+            <a class="btn btn-link btn-block" href="/register">Noch kein Konto? Hier registrieren!</a>
+        </div>
+    </form>
+</div>

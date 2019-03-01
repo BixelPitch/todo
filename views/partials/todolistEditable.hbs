@@ -1,0 +1,41 @@
+<div class="panel mb-2">
+    <div class="panel-header text-bold">
+        {{user.USERNAME}}
+    </div>
+    <div class="panel-body">
+        {{#each user.TODOS}}
+        <div class="columns">
+            <div class="column col-auto">
+                <form method="POST" action="/todos/{{TODO_ID}}">
+                    <input type="hidden" value="{{TODO_ID}}" name="todoid">
+                    {{#if DONE}}
+                    <input type="hidden" value="0" name="done">
+                    <button class="btn btn-secondary btn-action" onclick="this.form.submit()"><i class="icon icon-check"></i></button>
+                    {{else}}
+                    <input type="hidden" value="1" name="done">
+                    <button class="btn btn-secondary btn-action" onclick="this.form.submit()"></button>
+                    {{/if}}
+                </form>
+            </div>
+            <div class="column">
+                <form method="POST" action="/todos/{{TODO_ID}}">
+                    <div class="form-group mb-2">
+                        <input class="form-input"type="text" name="text" value="{{TEXT}}" onchange="this.form.submit()">
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{else}}
+        <p class="text-center">Keine Einträge vorhanden</p>
+        {{/each}}
+    </div>
+    <div class="panel-footer">
+        <form method="POST" action="/todos">
+            <div class="input-group">
+                <input type="hidden" value="{{user.USER_ID}}" name="userid">
+                <input class="form-input" type="text" placeholder="Neuer Eintrag" name="text">
+                <input class="btn btn-primary input-group-btn" type="submit" value="OK">
+            </div>
+        </form>
+    </div>
+</div>

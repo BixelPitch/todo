@@ -1,0 +1,14 @@
+{{> header showLogout=true}}
+<div class="container grid-xl">
+  <div class="columns">
+    {{#each users}}
+    <div class="column col-sm-12 col-lg-6 col-4">
+        {{#if EDITABLE}}
+            {{> todolistEditable user=this}}
+        {{else}}
+            {{> todolist user=this}}
+        {{/if}}
+    </div>
+    {{/each}}
+  </div>
+</div>
