@@ -7,9 +7,10 @@ router.get('/', (req, res, next) => {
         .then(users => {
             users.map(user => {
                 user.EDITABLE = user.USER_ID === req.user.USER_ID
+                user.i18n = req.i18n
                 return user
             })
-            res.render('users', { users: users, i18n: req.i18n })
+            res.render('users', { users: users })
         })
         .catch(() => {
             res.sendStatus(500)

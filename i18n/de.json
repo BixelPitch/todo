@@ -13,5 +13,6 @@
     "databaseErrorHeadline":    "Die Verbindung zur Datenbank konnte nicht hergestellt werden!",
     "databaseErrorSubheadline": "Bitte überprüfe deine Konfiguration und starte die Applikation neu!",
     "loadingHeadline":          "Verbindung zur Datenbank wird aufgebaut... Bitte warten.",
-    "loadingSubheadline":       "Diese Seite wird automatisch neu geladen. Lehne dich zurück und warte eine Sekunde!"
+    "loadingSubheadline":       "Diese Seite wird automatisch neu geladen. Lehne dich zurück und warte eine Sekunde!",
+    "newEntry":                 "Neuer Eintrag"
 }

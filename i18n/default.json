@@ -13,5 +13,6 @@
     "databaseErrorHeadline":    "The connection to the database couldn't be established!",
     "databaseErrorSubheadline": "Please check your configuration and restart the application!",
     "loadingHeadline":          "Connection to database is being established... Please wait.",
-    "loadingSubheadline":       "This page is being refreshed automatically. Lean back and wait a second!"
+    "loadingSubheadline":       "This page is being refreshed automatically. Lean back and wait a second!",
+    "newEntry":                 "New entry"
 }

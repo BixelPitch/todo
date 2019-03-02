@@ -4,9 +4,9 @@
     {{#each users}}
     <div class="column col-sm-12 col-lg-6 col-4">
         {{#if EDITABLE}}
-            {{> todolistEditable user=this i18n=i18n}}
+            {{> todolistEditable i18n=i18n user=this}}
         {{else}}
-            {{> todolist user=this i18n=i18n}}
+            {{> todolist i18n=i18n user=this}}
         {{/if}}
     </div>
     {{/each}}

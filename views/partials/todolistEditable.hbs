@@ -33,7 +33,7 @@
         <form method="POST" action="/todos">
             <div class="input-group">
                 <input type="hidden" value="{{user.USER_ID}}" name="userid">
-                <input class="form-input" type="text" placeholder="Neuer Eintrag" name="text">
+                <input class="form-input" type="text" placeholder="{{i18n.newEntry}}" name="text">
                 <input class="btn btn-primary input-group-btn" type="submit" value="OK">
             </div>
         </form>
