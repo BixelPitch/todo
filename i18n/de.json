@@ -14,5 +14,14 @@
     "databaseErrorSubheadline": "Bitte überprüfe deine Konfiguration und starte die Applikation neu!",
     "loadingHeadline":          "Verbindung zur Datenbank wird aufgebaut... Bitte warten.",
     "loadingSubheadline":       "Diese Seite wird automatisch neu geladen. Lehne dich zurück und warte eine Sekunde!",
-    "newEntry":                 "Neuer Eintrag"
+    "newEntry":                 "Neuer Eintrag",
+    "casualErrorText":          "Das hat nicht geklappt... Bitte versuche es erneut.",
+    "loginError":               "Benutzername oder Passwort ist nicht korrekt!",
+    "usernameValidation":       "Der Benutzername muss zwischen 1 und 64 Zeichen lang sein und darf keine Leerzeichen beinhalten.",
+    "passwordValidation":       "Das Passwortfeld ist nicht optional!",
+    "textValidation":           "Das Textfeld ist nicht optional!",
+    "useridValidation":         "Das Benutzer-ID-Feld ist nicht optional!",
+    "passwordsNotEqual":        "Passwörter stimmen nicht überein!",
+    "usernameTaken":            "Der Benutzername ist schon vergeben!",
+    "textOrDoneRequired":       "Text oder Fertig wird benötigt!"
 }

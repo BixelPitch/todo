@@ -14,5 +14,14 @@
     "databaseErrorSubheadline": "Please check your configuration and restart the application!",
     "loadingHeadline":          "Connection to database is being established... Please wait.",
     "loadingSubheadline":       "This page is being refreshed automatically. Lean back and wait a second!",
-    "newEntry":                 "New entry"
+    "newEntry":                 "New entry",
+    "casualErrorText":          "That did not work... Please try again.",
+    "loginError":               "Username or password incorrect.",
+    "usernameValidation":       "The username's length must be between 1 and 64 charactes and must not contain whitespaces.",
+    "passwordValidation":       "The password field is not optional!",
+    "textValidation":           "The text field is not optional!",
+    "useridValidation":         "The user id field is not optional!",
+    "passwordsNotEqual":        "Passwords do not match!",
+    "usernameTaken":            "The username is already in use!",
+    "textOrDoneRequired":       "Text or done is required!"
 }

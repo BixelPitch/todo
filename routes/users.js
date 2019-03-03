@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
+const createError = require('http-errors')
 
 router.get('/', (req, res, next) => {
     User.find()
@@ -10,10 +11,10 @@ router.get('/', (req, res, next) => {
                 user.i18n = req.i18n
                 return user
             })
-            res.render('users', { users: users })
+            res.render('users', { users: users, i18n: req.i18n })
         })
-        .catch(() => {
-            res.sendStatus(500)
+        .catch(err => {
+            next(createError(500, err))
         })
 })
 

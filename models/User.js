@@ -39,7 +39,7 @@ class User {
                     query += ' USERS.USER_ID=' + obj.USER_ID.toString()
                     break
                 case 'USERNAME':
-                    query += ' USERS.USERNAME="' + obj.USERNAME + '"'
+                    query += ' USERS.USERNAME="' + obj.USERNAME.toString() + '"'
                     break
                 }
                 if (index === objKeys.length - 1) {
@@ -67,11 +67,11 @@ class User {
             objKeys.forEach((key, index) => {
                 switch (key) {
                 case 'USERNAME':
-                    query += ' USERNAME="' + obj[key] + '"'
+                    query += ' USERNAME="' + obj[key].toString() + '"'
                     break
                 }
                 if (index === objKeys.length - 1) {
-                    query += ' WHERE USERS.USER_ID=' + id + ';'
+                    query += ' WHERE USERS.USER_ID=' + id.toString() + ';'
                 } else {
                     query += ' AND'
                 }
@@ -119,7 +119,7 @@ class User {
 
     static create (username, password) {
         return new Promise((resolve, reject) => {
-            mysql.query('INSERT INTO USERS(USERNAME, PASSWORD) VALUES("' + username + '","' + password + '")')
+            mysql.query('INSERT INTO USERS(USERNAME, PASSWORD) VALUES("' + username.toString() + '","' + password.toString() + '")')
                 .then(res => {
                     resolve(res)
                 })

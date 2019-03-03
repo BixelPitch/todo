@@ -35,10 +35,10 @@ class Todo {
                     query += ' TODOS.TODO_ID=' + obj.TODO_ID.toString()
                     break
                 case 'DONE':
-                    query += ' TODOS.DONE=' + obj.DONE
+                    query += ' TODOS.DONE=' + obj.DONE.toString()
                     break
                 case 'TEXT':
-                    query += ' TODOS.TEXT=' + obj.TEXT
+                    query += ' TODOS.TEXT=' + obj.TEXT.toString()
                     break
                 case 'USER':
                     query += ' TODOS.USER=' + obj.USER.toString()
@@ -69,14 +69,14 @@ class Todo {
             objKeys.forEach((key, index) => {
                 switch (key) {
                 case 'DONE':
-                    query += ' DONE=' + obj.DONE
+                    query += ' DONE=' + obj.DONE.toString()
                     break
                 case 'TEXT':
-                    query += ' TEXT="' + obj.TEXT + '"'
+                    query += ' TEXT="' + obj.TEXT.toString() + '"'
                     break
                 }
                 if (index === objKeys.length - 1) {
-                    query += ' WHERE TODOS.TODO_ID=' + id + ';'
+                    query += ' WHERE TODOS.TODO_ID=' + id.toString() + ';'
                 } else {
                     query += ' AND'
                 }
@@ -124,7 +124,7 @@ class Todo {
 
     static create (text, userid) {
         return new Promise((resolve, reject) => {
-            mysql.query('INSERT INTO TODOS(TEXT, USER) VALUES("' + text + '","' + userid + '")')
+            mysql.query('INSERT INTO TODOS(TEXT, USER) VALUES("' + text.toString() + '","' + userid.toString() + '")')
                 .then(res => {
                     resolve(res)
                 })

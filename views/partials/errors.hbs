@@ -1,0 +1,12 @@
+{{#if error}}
+<div class="toast toast-error">
+    {{error.message}}
+    {{#if error.errors}}
+    <ul>
+        {{#each error.errors}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
+{{/if}}

@@ -1,17 +1,18 @@
 {{> header}}
 <div class="container grid-sm">
+    {{> errors error=error}}
     <form method="POST" action="/register">
         <div class="form-group">
             <label class="form-label" for="username">{{i18n.username}}</label>
-            <input class="form-input" min="1" max="64" id="username" type="text" placeholder="Benutzername" name="username">
+            <input class="form-input" pattern="[^\s]{1,64}" id="username" type="text" placeholder="Benutzername" name="username" oninvalid="this.setCustomValidity('{{i18n.usernameValidation}}')" title="{{i18n.usernameValidation}}" required>
         </div>
         <div class="form-group">
             <label class="form-label" for="password">{{i18n.password}}</label>
-            <input class="form-input" min="1" id="password" type="password" placeholder="Passwort" name="password">
+            <input class="form-input" id="password" type="password" placeholder="Passwort" name="password" oninvalid="this.setCustomValidity('{{i18n.passwordValidation}}')" title="{{i18n.passwordValidation}}" required>
         </div>
         <div class="form-group">
             <label class="form-label" for="password-confirmation">{{i18n.retypePassword}}</label>
-            <input class="form-input" min="1" id="password-confirmation" type="password" placeholder="{{i18n.retypePassword}}" name="passwordConfirmation">
+            <input class="form-input" id="password-confirmation" type="password" placeholder="{{i18n.retypePassword}}" oninvalid="this.setCustomValidity('{{i18n.passwordValidation}}')" title="{{i18n.passwordValidation}}" name="passwordConfirmation" required>
         </div>
         <div class="form-group">
             <input class="btn btn-primary btn-block" value="{{i18n.register}}" type="submit">
