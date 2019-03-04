@@ -22,7 +22,7 @@ These are the default application parameters. If something does not fit to your 
 
 | Environment Variable   | Default                     | Description                                         |
 |:-----------------------|:----------------------------|:----------------------------------------------------|
-| NODE_ENV               | "development"               | Set it to ````development```` or ````production```` |
+| NODE_ENV               | "development"               | set it to ````development```` or ````production```` |
 | MYSQL_DB               | "todo"                      | database name                                       |
 | MYSQL_HOST             | "127.0.0.1"                 | the IP of the database server                       |
 | MYSQL_PORT             | 3306                        | the port of the database server                     |
@@ -31,3 +31,4 @@ These are the default application parameters. If something does not fit to your 
 | MYSQL_CONNECTION_LIMIT | 100                         | max open connections to the database                |
 | PORT                   | 3000                        | the port on which the app listens                   |
 | SECRET                 | "SHINIGAMI ONLY EAT APPLES" | the session secret                                  |
+| SECURE                 | false                       | set it to ````true```` if you have SSL configured   |
