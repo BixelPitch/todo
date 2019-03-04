@@ -66,7 +66,11 @@ app.use(cookieParser())
 app.use(session({
     secret: config.SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        secure: true,
+        httpOnly: true
+    }
 }))
 app.use(passport.initialize())
 app.use(passport.session())
