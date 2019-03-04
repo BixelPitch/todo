@@ -8,6 +8,7 @@ const mysqlMiddleware = require('./middleware/mysql')
 const mysql = require('./mysql/MySQL')
 const bcrypt = require('bcrypt')
 const session = require('express-session')
+const FileStore = require('session-file-store')(session)
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const hbs = require('hbs')
@@ -64,11 +65,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(session({
+    store: new FileStore({
+        path: './sessions'
+    }),
     secret: config.SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
-        secure: true,
+        secure: config.SECURE,
         httpOnly: true
     }
 }))

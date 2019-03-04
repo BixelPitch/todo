@@ -6,5 +6,6 @@ module.exports = {
     MYSQL_PASSWORD: process.env.MYSQL_PASSWORD || 'todo',
     MYSQL_CONNECTION_LIMIT: process.env.MYSQL_CONNECTION_LIMIT || 100,
     PORT: parseInt(process.env.PORT) || 3000,
-    SECRET: process.env.SECRET || 'SHINIGAMI ONLY EAT APPLES'
+    SECRET: process.env.SECRET || 'SHINIGAMI ONLY EAT APPLES',
+    SECURE: process.env.SECURE === 'true' || process.env.SECURE === 'True' || false
 }
