@@ -13,6 +13,7 @@ const LocalStrategy = require('passport-local').Strategy
 const hbs = require('hbs')
 const config = require('./config')
 const User = require('./models/User')
+const helmet = require('helmet')
 
 passport.use(new LocalStrategy(
     {
@@ -57,6 +58,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 hbs.registerPartials(path.join(__dirname, '/views/partials'))
 
+app.use(helmet())
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
