@@ -31,15 +31,15 @@ class User {
             obj = obj || {}
             let objKeys = Object.keys(obj)
             let query = objKeys.length === 0
-                ? 'SELECT * FROM USERS LEFT JOIN TODOS ON TODOS.USER=USERS.USER_ID;'
-                : 'SELECT * FROM USERS LEFT JOIN TODOS ON TODOS.USER=USERS.USER_ID WHERE'
+                ? 'SELECT * FROM USERS LEFT JOIN TODOS ON TODOS.USER = USERS.USER_ID;'
+                : 'SELECT * FROM USERS LEFT JOIN TODOS ON TODOS.USER = USERS.USER_ID WHERE'
             objKeys.forEach((key, index) => {
                 switch (key) {
                 case 'USER_ID':
-                    query += ' USERS.USER_ID=' + obj.USER_ID.toString()
+                    query += ' USERS.USER_ID = ' + obj.USER_ID.toString()
                     break
                 case 'USERNAME':
-                    query += ' USERS.USERNAME="' + obj.USERNAME.toString() + '"'
+                    query += ' USERS.USERNAME = ' + mysql.escape(obj.USERNAME)
                     break
                 }
                 if (index === objKeys.length - 1) {
@@ -67,11 +67,11 @@ class User {
             objKeys.forEach((key, index) => {
                 switch (key) {
                 case 'USERNAME':
-                    query += ' USERNAME="' + obj[key].toString() + '"'
+                    query += ' USERNAME = ' + mysql.escape(obj[key])
                     break
                 }
                 if (index === objKeys.length - 1) {
-                    query += ' WHERE USERS.USER_ID=' + id.toString() + ';'
+                    query += ' WHERE USERS.USER_ID = ' + id.toString() + ';'
                 } else {
                     query += ' AND'
                 }
@@ -88,7 +88,7 @@ class User {
 
     static findOneAndDelete (id) {
         return new Promise((resolve, reject) => {
-            mysql.query('DELETE FROM USERS WHERE USER_ID=' + id.toString() + ';')
+            mysql.query('DELETE FROM USERS WHERE USER_ID = ' + id.toString() + ';')
                 .then(res => {
                     resolve(res)
                 })
@@ -100,7 +100,7 @@ class User {
 
     static findOne (id) {
         return new Promise((resolve, reject) => {
-            mysql.query('SELECT * FROM USERS LEFT JOIN TODOS ON TODOS.USER=USERS.USER_ID WHERE USERS.USER_ID = ' + id.toString() + ';')
+            mysql.query('SELECT * FROM USERS LEFT JOIN TODOS ON TODOS.USER = USERS.USER_ID WHERE USERS.USER_ID = ' + id.toString() + ';')
                 .then(rows => {
                     let users = this.deserialize(rows)
                     let result = null
@@ -119,7 +119,7 @@ class User {
 
     static create (username, password) {
         return new Promise((resolve, reject) => {
-            mysql.query('INSERT INTO USERS(USERNAME, PASSWORD) VALUES("' + username.toString() + '","' + password.toString() + '")')
+            mysql.query('INSERT INTO USERS(USERNAME, PASSWORD) VALUES(' + mysql.escape(username) + ',"' + password.toString() + '")')
                 .then(res => {
                     resolve(res)
                 })

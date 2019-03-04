@@ -27,21 +27,21 @@ class Todo {
             obj = obj || {}
             let objKeys = Object.keys(obj)
             let query = objKeys.length === 0
-                ? 'SELECT * FROM TODOS LEFT JOIN USERS ON USERS.USER_ID=TODOS.USER;'
-                : 'SELECT * FROM TODOS LEFT JOIN USERS ON USERS.USER_ID=TODOS.USER WHERE'
+                ? 'SELECT * FROM TODOS LEFT JOIN USERS ON USERS.USER_ID = TODOS.USER;'
+                : 'SELECT * FROM TODOS LEFT JOIN USERS ON USERS.USER_ID = TODOS.USER WHERE'
             objKeys.forEach((key, index) => {
                 switch (key) {
                 case 'TODO_ID':
-                    query += ' TODOS.TODO_ID=' + obj.TODO_ID.toString()
+                    query += ' TODOS.TODO_ID = ' + obj.TODO_ID.toString()
                     break
                 case 'DONE':
-                    query += ' TODOS.DONE=' + obj.DONE.toString()
+                    query += ' TODOS.DONE = ' + obj.DONE.toString()
                     break
                 case 'TEXT':
-                    query += ' TODOS.TEXT=' + obj.TEXT.toString()
+                    query += ' TODOS.TEXT = ' + mysql.escape(obj.TEXT)
                     break
                 case 'USER':
-                    query += ' TODOS.USER=' + obj.USER.toString()
+                    query += ' TODOS.USER = ' + obj.USER.toString()
                     break
                 }
                 if (index === objKeys.length - 1) {
@@ -69,14 +69,14 @@ class Todo {
             objKeys.forEach((key, index) => {
                 switch (key) {
                 case 'DONE':
-                    query += ' DONE=' + obj.DONE.toString()
+                    query += ' DONE = ' + obj.DONE.toString()
                     break
                 case 'TEXT':
-                    query += ' TEXT="' + obj.TEXT.toString() + '"'
+                    query += ' TEXT = ' + mysql.escape(obj.TEXT)
                     break
                 }
                 if (index === objKeys.length - 1) {
-                    query += ' WHERE TODOS.TODO_ID=' + id.toString() + ';'
+                    query += ' WHERE TODOS.TODO_ID = ' + id.toString() + ';'
                 } else {
                     query += ' AND'
                 }
@@ -93,7 +93,7 @@ class Todo {
 
     static findOneAndDelete (id) {
         return new Promise((resolve, reject) => {
-            mysql.query('DELETE FROM TODOS WHERE TODO_ID=' + id.toString() + ';')
+            mysql.query('DELETE FROM TODOS WHERE TODO_ID = ' + id.toString() + ';')
                 .then(res => {
                     resolve(res)
                 })
@@ -124,7 +124,7 @@ class Todo {
 
     static create (text, userid) {
         return new Promise((resolve, reject) => {
-            mysql.query('INSERT INTO TODOS(TEXT, USER) VALUES("' + text.toString() + '","' + userid.toString() + '")')
+            mysql.query('INSERT INTO TODOS(TEXT, USER) VALUES(' + mysql.escape(text) + ',' + userid.toString() + ');')
                 .then(res => {
                     resolve(res)
                 })

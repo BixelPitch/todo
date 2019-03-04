@@ -19,6 +19,11 @@ let query = function (query) {
     })
 }
 
+let escape = function (s) {
+    return mysql.escape(s)
+}
+
 module.exports = {
-    query: query
+    query: query,
+    escape
 }
