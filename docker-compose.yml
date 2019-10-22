@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  mariadb:
+    image: mariadb:10
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: todo_user
+      MYSQL_PASSWORD: todo
+      MYSQL_DATABASE: todo
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "./mysql:/docker-entrypoint-initdb.d"
+  
+  todo:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: development
+      MYSQL_DB: todo
+      MYSQL_HOST: mariadb
+      MYSQL_PORT: 3306
+      MYSQL_USER: todo_user
+      MYSQL_PASSWORD: todo
+      MYSQL_CONNECTION_LIMIT: 100
+      PORT: 3000
+      SECRET: "SHINIGAMI ONLY EAT APPLES"
+      SECURE: "false"
+    depends_on:
+      - "mariadb"
+    command: ["./scripts/wait-for-it.sh", "mariadb:3306", "--", "npm", "start"]
